@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+:root {
+  --accent-color: #6a0dad;
+  --accent-color-2: #8a2be2;
+  --border-primary: #1f0d33;
+  --border-active: #3a1668;
+  --background-color: #07030f;
+  --background-secondary: #0f0820;
+  --hover-color: #18092e;
+  --text-primary: #d8cfee;
+  --text-inactive: #8d7bb0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  font-optical-sizing: auto;
+  margin: 1.5rem;
+  font-family: Quicksand, sans-serif;
+  font-style: normal;
+}
+
+.centered {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.page-transition {
+  animation: 0.28s ease-out both page-enter;
+}
+
+@keyframes page-enter {
+  0% { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition { animation: none; }
+}
+
+h1 { font-weight: 700; }
+h2:has(+ p) { margin-bottom: 0; }
+h3 { font-weight: 700; }
+
+p {
+  color: var(--text-inactive);
+  white-space: normal;
+  overflow-wrap: break-word;
+  width: 90%;
+  max-width: 600px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.accent { color: var(--accent-color); font-weight: 900; }
+
+.accent-gradient {
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-color-2) 25%, var(--accent-color) 100%);
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: 5s linear infinite shimmer;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+/* navbar */
+.navbar {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 1.15rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: fit-content;
+  margin: auto;
+  padding: 0.65rem 0.8rem 0.65rem 1.1rem;
+  display: flex;
+}
+
+.navbar-brand {
+  color: var(--accent-color);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar-links {
+  align-items: center;
+  gap: 0.25rem;
+  display: flex;
+}
+
+.navbar-link {
+  color: var(--text-inactive);
+  border-radius: 0.6rem;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.navbar-link:hover { color: var(--text-primary); }
+
+.navbar-link-active {
+  color: var(--text-primary);
+  background-color: var(--hover-color);
+}
+
+/* link buttons */
+.link-container {
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 600px;
+  display: flex;
+}
+
+.link-button {
+  text-wrap: none;
+  background: var(--background-secondary);
+  border-style: solid;
+  border-color: var(--border-primary);
+  border-width: 1px;
+  border-radius: 1.25rem;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 0.65rem 1rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  display: inline-flex;
+}
+
+.link-button:hover {
+  border-color: var(--border-active);
+  background-color: var(--hover-color);
+}
+
+.link-text-container {
+  flex-direction: column;
+  align-items: start;
+  display: inline-flex;
+}
+
+.link-text-lower {
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.link-text-upper {
+  color: var(--text-inactive);
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.link-icon {
+  object-fit: contain;
+  width: 20px;
+  height: 20px;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* placeholders */
+.placeholder {
+  color: var(--text-inactive);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 3rem 1rem;
+  opacity: 0.7;
+}
+
+/* footer */
+.footer {
+  text-align: center;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.footer-text {
+  color: var(--text-inactive);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-link {
+  color: var(--text-primary);
+  font-weight: 700;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-link:hover { color: var(--accent-color); }
+
+@media (width <= 480px) {
+  .navbar { gap: 0.75rem; padding: 0.55rem 0.6rem 0.55rem 0.75rem; }
+  .navbar-brand { font-size: 0.9rem; }
+  .navbar-link { padding: 0.4rem 0.45rem; font-size: 0.75rem; }
+}
