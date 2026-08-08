@@ -86,7 +86,7 @@ function homePage() {
   root.appendChild(title);
 
   root.appendChild(p(
-    "I am a self-taught software developer with experience in a wide range of programming languages and technologies. I learned most of my skills on my own through building projects, experimenting, and figuring things out as I go, I am pretty comfortable adapting to new tools and stacks quickly. I focus on writing solid, clean code and keep improving by just building things and learning from what breaks or works well."
+    "I am a self-taught software and game developer with experience in a wide range of programming languages and technologies. I learned most of my skills on my own through building projects, experimenting, and figuring things out as I go, I am pretty comfortable adapting to new tools and stacks quickly. I focus on writing solid, clean code and keep improving by just building things and learning from what breaks or works well."
   ));
 
   root.appendChild(h2("Where to contact me"));
